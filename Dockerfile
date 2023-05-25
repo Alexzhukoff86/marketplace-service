@@ -1,4 +1,4 @@
-FROM python:3.8
+FROM python:3.8.0
 WORKDIR /marketplace_service
 COPY /marketplace-service .
 ENV PYTHONPATH /marketplace_service
