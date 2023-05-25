@@ -1,0 +1,26 @@
+<!-- accounts.html -->
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Books store</title>
+</head>
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<body>
+    <h1>Accounts</h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+    {% for account in accounts %}
+        <tr>
+            <td>{{ account.name }}</td>
+            <td>{{ account.email }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+</body>
