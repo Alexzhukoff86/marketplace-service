@@ -7,7 +7,7 @@ from books_shared.protopy.account_pb2_grpc import AccountServiceStub
 
 class Client:
     def __init__(self):
-        account_server_channel = grpc.insecure_channel(f"[::]:{Config.account_server_port}")
+        account_server_channel = grpc.insecure_channel(f"{Config.account_server}:{Config.account_server_port}")
         self.account_client = AccountServiceStub(account_server_channel)
 
     def get_account(self, id):
