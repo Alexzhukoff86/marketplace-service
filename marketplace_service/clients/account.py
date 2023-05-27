@@ -16,5 +16,6 @@ class Client:
         return get_account_response.account
 
     def get_accounts(self):
-        accounts = self.account_client.GetAccountList(google_dot_protobuf_dot_empty__pb2)
+        empty = google_dot_protobuf_dot_empty__pb2.Empty()
+        accounts = self.account_client.GetAccountList(empty)
         return accounts.accounts
