@@ -6,10 +6,10 @@ from marketplace_service.clients.account import Client
 app = Flask(__name__)
 
 
-@app.route("/account")
+@app.route("/accounts")
 def render_account_page():
     client = Client()
-    logger.info(client.get_account(1))
+    logger.info(client.get_accounts())
     return render_template('accounts.html', accounts=client.get_account(1))
 
 

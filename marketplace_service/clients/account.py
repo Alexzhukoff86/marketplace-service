@@ -13,4 +13,8 @@ class Client:
     def get_account(self, id):
         get_account_request = GetAccountRequest(id=id)
         get_account_response = self.account_client.GetAccount(get_account_request)
-        return [get_account_response.account]
+        return get_account_response.account
+
+    def get_accounts(self):
+        accounts = self.account_client.GetAccountList()
+        return accounts.accounts
