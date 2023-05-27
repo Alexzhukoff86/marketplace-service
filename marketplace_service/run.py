@@ -9,8 +9,7 @@ app = Flask(__name__)
 @app.route("/accounts")
 def render_account_page():
     client = Client()
-    logger.info(client.get_accounts())
-    return render_template('accounts.html', accounts=client.get_account(1))
+    return render_template('accounts.html', accounts=client.get_accounts())
 
 
 if __name__ == '__main__':

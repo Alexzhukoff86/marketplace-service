@@ -2,7 +2,7 @@ import grpc
 
 from books_shared.utils import logger
 from books_shared.utils.config import Config
-from books_shared.protopy.account_pb2 import GetAccountRequest, GetAccountResponse
+from books_shared.protopy.account_pb2 import GetAccountRequest, GetAccountResponse, google_dot_protobuf_dot_empty__pb2
 from books_shared.protopy.account_pb2_grpc import AccountServiceStub
 
 class Client:
@@ -16,5 +16,5 @@ class Client:
         return get_account_response.account
 
     def get_accounts(self):
-        accounts = self.account_client.GetAccountList()
+        accounts = self.account_client.GetAccountList(google_dot_protobuf_dot_empty__pb2)
         return accounts.accounts
